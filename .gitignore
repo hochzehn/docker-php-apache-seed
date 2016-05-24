@@ -1,0 +1,9 @@
+# Ignore IDE settings
+/.idea
+
+# Ignore dependencies
+/vendor
+
+# Configuration files
+/config/*.yml
+!/config/*.sample.yml
