@@ -1,4 +1,4 @@
-# docker-php-apache-seed
+# docker-php-cli-seed
 
 Start a fresh PHP CLI project with Docker - no install on your local machine.
 
