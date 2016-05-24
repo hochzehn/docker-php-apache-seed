@@ -11,7 +11,8 @@ Create a fresh CLI job with PHP to run cron jobs or other tasks in a predictable
 1. Fork or clone this repository.
 2. Copy `config/settings.sample.yml` to `config/settings.yml` (e.g. by using `cp config/settings.sample.yml config/settings.yml`)
 3. Run `bin/run.sh YOUR_NAME` to see the script in action.
-4. You should see something like this:
+
+You should see something like this:
 
     $ bin/run.sh Foo Bar
     Di 24. Mai 11:11:45 CEST 2016
@@ -25,7 +26,7 @@ Create a fresh CLI job with PHP to run cron jobs or other tasks in a predictable
     
     Di 24. Mai 11:11:46 CEST 2016
     Running job.
-    Hello, Foo & Bar!
+    Hello, YOUR_NAME!
     
     Di 24. Mai 11:11:46 CEST 2016
     Claiming ownership of all files.
