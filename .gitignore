@@ -7,3 +7,6 @@
 # Configuration files
 /config/*.yml
 !/config/*.sample.yml
+
+# Test artifacts
+/build

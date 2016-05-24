@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Usage:
-# bin/run.sh [params]
+# bin/test.sh [params]
 #
 
 BUILD_LOG_FILE=/dev/null
+TEST_LOG_FILE=var/test.log
 
 date
 echo "Starting."
@@ -26,23 +27,12 @@ docker build --tag "$PROJECT_NAME" docker/php-cli &> "$BUILD_LOG_FILE"
 
 echo ""
 date
-echo "Running job."
+echo "Running tests."
 
 docker run \
   --rm \
   -v "$WORK_DIR":/app \
   -w /app \
+  --entrypoint "/app/vendor/bin/phpunit" \
   "$PROJECT_NAME" \
-  $*
-
-echo ""
-echo ""
-date
-echo "Claiming ownership of all files."
-
-bin/own.sh ${WORK_DIR}
-
-echo ""
-echo ""
-date
-echo "Script finished."
+  --stderr --color $@ 2>&1 | tee "$TEST_LOG_FILE"

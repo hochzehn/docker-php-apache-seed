@@ -46,6 +46,12 @@ To do so, update the first line in `docker/php-cli/Dockerfile` to the latest ava
 
 Start coding away in `src/Application.php` and create more classes in `src` and sub-directories as you see fit. The root namespace is named `Application\`, you may want to change it to reflect your purpose better. To do so, edit `autoload: psr-4` section in `composer.json` as well as `src/Application.php` and `src/Configuration.php`.
 
+## Tests
+
+Tests are supported via [PHPUnit](https://phpunit.de/). Test cases should go into `test/`. Run all tests with `bin/test.sh`. Parameters given will be passed to PHPUnit directly, e.g. `bin/test.sh --version`.
+
+Testing output is also stored in `var/test.log` for easier readability. Code coverage reports are generated in `var/coverage`. 
+
 ## Simple configuration
 
 This seed repository includes a simple mechanism to keep configuration out of the code. In `config/settings.yml`, store all your application's settings which might be changed on a production machine.
